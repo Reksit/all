@@ -21,10 +21,33 @@ import { TaskReminderService } from './services/task-reminder.service';
   standalone: true,
   imports: [CommonModule, RouterOutlet],
   template: `
+    <!-- Star Animation Background -->
+    <div class="star-background">
+      <div class="star" *ngFor="let star of stars; let i = index" [style.animation-delay.s]="star.delay" [style.animation-duration.s]="star.duration" [style.top.px]="star.top" [style.right.px]="star.right"></div>
+    </div>
+    
     <router-outlet></router-outlet>
   `,
 })
 export class App {
+  stars = [
+    { delay: 0, duration: 1, top: 0, right: 0 },
+    { delay: 0.2, duration: 3, top: 0, right: 80 },
+    { delay: 0.4, duration: 2, top: 80, right: 0 },
+    { delay: 0.6, duration: 1.5, top: 0, right: 180 },
+    { delay: 0.8, duration: 2.5, top: 0, right: 400 },
+    { delay: 1, duration: 3, top: 0, right: 600 },
+    { delay: 1.2, duration: 1.75, top: 300, right: 0 },
+    { delay: 1.4, duration: 1.25, top: 0, right: 700 },
+    { delay: 0.75, duration: 2.25, top: 0, right: 1000 },
+    { delay: 2.75, duration: 2.75, top: 0, right: 450 },
+    { delay: 1.8, duration: 2.1, top: 150, right: 200 },
+    { delay: 2.2, duration: 1.8, top: 50, right: 800 },
+    { delay: 0.3, duration: 2.8, top: 250, right: 300 },
+    { delay: 1.6, duration: 1.3, top: 100, right: 900 },
+    { delay: 2.4, duration: 2.6, top: 200, right: 100 }
+  ];
+
   constructor(private taskReminderService: TaskReminderService) {
     // Initialize task reminder service
     this.taskReminderService.requestNotificationPermission();
