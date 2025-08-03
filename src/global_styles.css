@@ -155,25 +155,51 @@ body {
   color: var(--dark-text-primary);
   background: #000;
   overflow-x: hidden;
+  overflow-y: auto;
   min-height: 100vh;
   position: relative;
 }
 
-/* Animated Background Section */
+/* Enhanced Animated Background Section */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://images.pexels.com/photos/1252890/pexels-photo-1252890.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop') center/cover;
+  background-color: #000;
+  animation: animateBg 50s linear infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes animateBg {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
 .star-background {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background: #000;
   z-index: -1;
   overflow: hidden;
+  pointer-events: none;
 }
 
 /* Star Animation */
 .star {
   position: absolute;
+  top: 50%;
+  left: 50%;
   width: 4px;
   height: 4px;
   background: #fff;
@@ -182,7 +208,7 @@ body {
     0 0 0 4px rgba(255, 255, 255, 0.1),
     0 0 0 8px rgba(255, 255, 255, 0.1),
     0 0 20px rgba(255, 255, 255, 0.1);
-  animation: starFall 3s linear infinite;
+  animation: animate 3s linear infinite;
 }
 
 .star::before {
@@ -195,7 +221,7 @@ body {
   background: linear-gradient(90deg, #fff, transparent);
 }
 
-@keyframes starFall {
+@keyframes animate {
   0% {
     transform: rotate(315deg) translateX(0);
     opacity: 1;
@@ -209,10 +235,11 @@ body {
   }
 }
 
-/* Star positions and timing */
+/* Enhanced Star positions and timing */
 .star:nth-child(1) {
   top: 0;
   right: 0;
+  left: initial;
   animation-delay: 0s;
   animation-duration: 1s;
 }
@@ -220,6 +247,7 @@ body {
 .star:nth-child(2) {
   top: 0;
   right: 80px;
+  left: initial;
   animation-delay: 0.2s;
   animation-duration: 3s;
 }
@@ -227,6 +255,7 @@ body {
 .star:nth-child(3) {
   top: 80px;
   right: 0px;
+  left: initial;
   animation-delay: 0.4s;
   animation-duration: 2s;
 }
@@ -234,6 +263,7 @@ body {
 .star:nth-child(4) {
   top: 0;
   right: 180px;
+  left: initial;
   animation-delay: 0.6s;
   animation-duration: 1.5s;
 }
@@ -241,6 +271,7 @@ body {
 .star:nth-child(5) {
   top: 0;
   right: 400px;
+  left: initial;
   animation-delay: 0.8s;
   animation-duration: 2.5s;
 }
@@ -248,6 +279,7 @@ body {
 .star:nth-child(6) {
   top: 0;
   right: 600px;
+  left: initial;
   animation-delay: 1s;
   animation-duration: 3s;
 }
@@ -255,6 +287,7 @@ body {
 .star:nth-child(7) {
   top: 300px;
   right: 0px;
+  left: initial;
   animation-delay: 1.2s;
   animation-duration: 1.75s;
 }
@@ -262,6 +295,7 @@ body {
 .star:nth-child(8) {
   top: 0px;
   right: 700px;
+  left: initial;
   animation-delay: 1.4s;
   animation-duration: 1.25s;
 }
@@ -269,6 +303,7 @@ body {
 .star:nth-child(9) {
   top: 0px;
   right: 1000px;
+  left: initial;
   animation-delay: 0.75s;
   animation-duration: 2.25s;
 }
@@ -276,6 +311,7 @@ body {
 .star:nth-child(10) {
   top: 0px;
   right: 450px;
+  left: initial;
   animation-delay: 2.75s;
   animation-duration: 2.75s;
 }
@@ -283,6 +319,7 @@ body {
 .star:nth-child(11) {
   top: 150px;
   right: 200px;
+  left: initial;
   animation-delay: 1.8s;
   animation-duration: 2.1s;
 }
@@ -290,6 +327,7 @@ body {
 .star:nth-child(12) {
   top: 50px;
   right: 800px;
+  left: initial;
   animation-delay: 2.2s;
   animation-duration: 1.8s;
 }
@@ -297,6 +335,7 @@ body {
 .star:nth-child(13) {
   top: 250px;
   right: 300px;
+  left: initial;
   animation-delay: 0.3s;
   animation-duration: 2.8s;
 }
@@ -304,6 +343,7 @@ body {
 .star:nth-child(14) {
   top: 100px;
   right: 900px;
+  left: initial;
   animation-delay: 1.6s;
   animation-duration: 1.3s;
 }
@@ -311,8 +351,50 @@ body {
 .star:nth-child(15) {
   top: 200px;
   right: 100px;
+  left: initial;
   animation-delay: 2.4s;
   animation-duration: 2.6s;
+}
+
+/* Additional stars for more dynamic effect */
+.star:nth-child(16) {
+  top: 400px;
+  right: 500px;
+  left: initial;
+  animation-delay: 3s;
+  animation-duration: 2.2s;
+}
+
+.star:nth-child(17) {
+  top: 50px;
+  right: 1200px;
+  left: initial;
+  animation-delay: 1.1s;
+  animation-duration: 2.9s;
+}
+
+.star:nth-child(18) {
+  top: 350px;
+  right: 150px;
+  left: initial;
+  animation-delay: 2.1s;
+  animation-duration: 1.6s;
+}
+
+.star:nth-child(19) {
+  top: 120px;
+  right: 750px;
+  left: initial;
+  animation-delay: 0.9s;
+  animation-duration: 2.4s;
+}
+
+.star:nth-child(20) {
+  top: 280px;
+  right: 350px;
+  left: initial;
+  animation-delay: 1.7s;
+  animation-duration: 1.9s;
 }
 
 /* Enhanced Scrollbar Styling */

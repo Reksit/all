@@ -45,7 +45,12 @@ export class App {
     { delay: 2.2, duration: 1.8, top: 50, right: 800 },
     { delay: 0.3, duration: 2.8, top: 250, right: 300 },
     { delay: 1.6, duration: 1.3, top: 100, right: 900 },
-    { delay: 2.4, duration: 2.6, top: 200, right: 100 }
+    { delay: 2.4, duration: 2.6, top: 200, right: 100 },
+    { delay: 3, duration: 2.2, top: 400, right: 500 },
+    { delay: 1.1, duration: 2.9, top: 50, right: 1200 },
+    { delay: 2.1, duration: 1.6, top: 350, right: 150 },
+    { delay: 0.9, duration: 2.4, top: 120, right: 750 },
+    { delay: 1.7, duration: 1.9, top: 280, right: 350 }
   ];
 
   constructor(private taskReminderService: TaskReminderService) {
